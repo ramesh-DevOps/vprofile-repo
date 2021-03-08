@@ -1,0 +1,22 @@
+---
+host: 34.221.34.240
+become: yes
+tasks:
+   - name: install apache2 service
+     apt:
+       name: "{{item}}"
+       state: present
+       update_cache: yes
+     loop:
+       - wget 
+       - zip
+       - unzip
+       - ntp
+     register: output
+
+   - debug: 
+       var: output
+   - service:
+       name: apache2
+       state: present
+       enabled: yes
