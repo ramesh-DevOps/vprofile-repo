@@ -1,6 +1,6 @@
 ---
 - name: Common tool setup on all the servers
-  hosts: 34.221.34.240
+  hosts: 54.68.31.29
   become: yes
   vars:
     tom_url: https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz
